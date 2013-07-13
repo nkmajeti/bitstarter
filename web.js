@@ -11,6 +11,6 @@ var file = require("fs")
 
 
 app.get('/', function(request,response){
-    var buffer = new Buffer(256);
-    response.send(buffer.toString('utf-8', file.readFileSync("index.html")))
+    var buffer = new Buffer(file.readFileSync("index.html"), "utf-u")
+    response.send(buffer.toString()
 });
