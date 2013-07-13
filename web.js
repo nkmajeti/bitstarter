@@ -12,5 +12,5 @@ var file = require("fs")
 
 app.get('/', function(request,response){
     var buffer = file.readFileSync("index.html")
-    response.send(buffer.toString()
+    response.send(buffer.toString())
 });
