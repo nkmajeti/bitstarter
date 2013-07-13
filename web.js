@@ -8,9 +8,9 @@ app.listen(port, function() {
 });
 
 var file = require("fs")
-var content = file.readFileSync("index.html");
-var buffer = new Buffer(200);
-buffer.write(content)
+
+
 app.get('/', function(request,response){
-    response.send(buffer.toString('utf-8'))
+    var buffer = new Buffer(256);
+    response.send(buffer.toString('utf-8', file.readFileSync("index.html")))
 });
